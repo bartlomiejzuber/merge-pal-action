@@ -10223,16 +10223,10 @@ function canMergeByMergeable(pr) {
     return pr.mergeable;
 }
 exports.canMergeByMergeable = canMergeByMergeable;
-function canMergeByMergeableState(pr) {
-    return pr.mergeable_state === 'clean' || pr.mergeable_state === 'unstable';
-}
-exports.canMergeByMergeableState = canMergeByMergeableState;
 function canMerge(pr, whitelist, blacklist) {
     const byMergeable = canMergeByMergeable(pr);
-    const byMergeableState = canMergeByMergeableState(pr);
     console.log('by mergeable', byMergeable);
-    console.log('by mergeable state', byMergeableState);
-    return byMergeable && byMergeableState;
+    return byMergeable;
 }
 exports.default = canMerge;
 

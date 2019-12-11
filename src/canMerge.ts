@@ -9,8 +9,6 @@ export default function canMerge(
     blacklist: string[],
 ) {
     const byMergeable = canMergeByMergeable(pr)
-    const byMergeableState = canMergeByMergeableState(pr)
     console.log('by mergeable', byMergeable)
-    console.log('by mergeable state', byMergeableState)
     return byMergeable
 }
